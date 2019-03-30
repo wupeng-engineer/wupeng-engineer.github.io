@@ -5,14 +5,73 @@
 </template>
 
 <style lang="less">
+body {
+    background-color: #e74c3c;
+
+    animation: bg-color 10s infinite;
+
+    -webkit-animation: bg-color 10s infinite;
+  }
+
+  @-webkit-keyframes bg-color {
+    0% {
+      background-color: #e74c3c;
+    }
+
+    20% {
+      background-color: #f1c40f;
+    }
+
+    40% {
+      background-color: #1abc9c;
+    }
+
+    60% {
+      background-color: #3498db;
+    }
+
+    80% {
+      background-color: #9b59b6;
+    }
+
+    100% {
+      background-color: #e74c3c;
+    }
+  }
+
+  @keyframes bg-color {
+    0% {
+      background-color: #e74c3c;
+    }
+
+    20% {
+      background-color: #f1c40f;
+    }
+
+    40% {
+      background-color: #1abc9c;
+    }
+
+    60% {
+      background-color: #3498db;
+    }
+
+    80% {
+      background-color: #9b59b6;
+    }
+
+    100% {
+      background-color: #e74c3c;
+    }
+  }
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   // text-align: center;
   color: #2c3e50;
   width: 100%;
   height: 100%;
+  
 }
-
 </style>

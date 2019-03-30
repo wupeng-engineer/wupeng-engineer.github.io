@@ -7,7 +7,6 @@ body {
   padding: 0px;
 }
 .wrap {
-  background: url(../../assets/images/bg.png) no-repeat center center fixed;
   background-size: 100% 100%;
   height: 100%;
   width: 100%;
@@ -24,7 +23,6 @@ body {
 .login-header {
   height: 84px;
   width: 100%;
-  background: url(../../assets/images/logo.png) no-repeat left;
 }
 .header-written {
   font-size: 23px;
@@ -38,7 +36,6 @@ body {
   height: 335px;
   background: #fff;
   border-radius: 3px;
-  box-shadow: #4771b1 5px 4px 2px 2px;
 }
 .form-title {
   width: 100%;
@@ -85,7 +82,8 @@ body {
 }
 .check-box {
   text-align: left;
-  padding-left: 108px;
+  padding-left: 110px;
+  margin: 10px 0;
 }
 .check-box > input {
   width: 14px;
@@ -99,6 +97,9 @@ body {
 .spanlit {
   color: #365c7c;
   padding-left: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 5px;
 }
 .btn-box {
   width: 100%;

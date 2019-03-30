@@ -1,8 +1,8 @@
 <template>
   <div class="about">
-    <left/>
-    <header/>
-    <content/>
+    <Left/>
+    <Header/>
+    <Content/>
   </div>
 </template>
 
