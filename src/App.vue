@@ -1,29 +1,77 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
 
 <style lang="less">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+body {
+    background-color: #e74c3c;
+
+    animation: bg-color 10s infinite;
+
+    -webkit-animation: bg-color 10s infinite;
+  }
+
+  @-webkit-keyframes bg-color {
+    0% {
+      background-color: #e74c3c;
+    }
+
+    20% {
+      background-color: #f1c40f;
+    }
+
+    40% {
+      background-color: #1abc9c;
+    }
+
+    60% {
+      background-color: #3498db;
+    }
+
+    80% {
+      background-color: #9b59b6;
+    }
+
+    100% {
+      background-color: #e74c3c;
     }
   }
+
+  @keyframes bg-color {
+    0% {
+      background-color: #e74c3c;
+    }
+
+    20% {
+      background-color: #f1c40f;
+    }
+
+    40% {
+      background-color: #1abc9c;
+    }
+
+    60% {
+      background-color: #3498db;
+    }
+
+    80% {
+      background-color: #9b59b6;
+    }
+
+    100% {
+      background-color: #e74c3c;
+    }
+  }
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // text-align: center;
+  color: #2c3e50;
+  width: 100%;
+  height: 100%;
+  
 }
 </style>
