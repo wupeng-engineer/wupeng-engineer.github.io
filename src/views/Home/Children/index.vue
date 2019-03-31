@@ -1,5 +1,5 @@
 <template>
-  <div class="h">
+  <div class="content">
     <vue-scroll :ops="ops">
       <div v-for="(item,key,index ) in items" v-bind:key="index">
         <Card
@@ -16,9 +16,10 @@
 </template>
 
 <script>
-import Card from "@/components/card";
+//文章列表
+import Card from "@/components/homeComponents/card";
 export default {
-  name: "h",
+  name: "content",
   data() {
     return {
       isShow: "all",
@@ -72,12 +73,13 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.h {
+.content {
   width: 752px;
   position: absolute;
   left: 50%;
   margin-left: -376px;
-  height: 900px;
+  height: 800px;
   overflow: hidden;
+  margin-top: 20px;
 }
 </style>

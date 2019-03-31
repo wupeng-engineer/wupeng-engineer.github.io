@@ -1,28 +1,45 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from './views/index.vue'
-
+import index from './views/index.vue'
 Vue.use(Router)
 
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'index',
-      component: Index
+      component: index,
     },
     {
       path: '/home',
       name: 'home',
-      component: () => import(/* webpackChunkName: "about" */ './views/Home.vue')
-    },
-    {
-        path: '/h',
-        name: 'h',
-        component: () =>
-            import ( /* webpackChunkName: "about" */ './views/h.vue')
+      component: () => import( /* webpackChunkName: "home" */ './views/Home/index.vue'),
+      children: [{
+          path: '/',
+          name: 'content',
+          component: () =>
+            import( /* webpackChunkName: "index" */ './views/Home/Children/index.vue')
+        },
+        {
+          path: '/code',
+          name: 'code',
+          component: () =>
+            import( /* webpackChunkName: "code" */ './views/Home/Children/code.vue')
+        },
+        {
+          path: '/forum',
+          name: 'forum',
+          component: () =>
+            import( /* webpackChunkName: "forum" */ './views/Home/Children/forum.vue')
+        },
+        {
+          path: '/community',
+          name: 'community',
+          component: () =>
+            import( /* webpackChunkName: "community" */ './views/Home/Children/community.vue')
+        }
+      ]
     }
   ]
 })
