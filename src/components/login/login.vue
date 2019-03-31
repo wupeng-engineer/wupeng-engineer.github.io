@@ -36,8 +36,12 @@ import "./login.less";
 export default {
   name: "login",
   data() {
+
+
+
+      
     return {
-      message: "",
+      message: "华谊新材料生产管理（MES）系统",
       title: "用户登录",
       name: "用户名：",
       pass: "密码：",

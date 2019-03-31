@@ -27,15 +27,13 @@ yarn run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-<<<<<<< HEAD
 
 ### 公共样式common.less
 1.圆角border-radius:3px;
 2.边框：border：1px solid #ddd;
 3.input高度为30px；
-=======
+
 ### 滚动条组件
 ```
 npm i vue-gemini-scrollbar --save
 ```
->>>>>>> 8edbcdb282ab443f39635b2f96349204b07e626c
