@@ -1,20 +1,21 @@
 <template>
-  <div class="home">
-    <login/>
+  <div class="about">
+    <Header/>
+    <Content/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import login from '@/components/login/login.vue'
+import Header from '@/components/public/header.vue'
+import Content from '@/components/public/content.vue'
 
 export default {
   name: 'home',
   components: {
-    login
+    Header,
+    Content  
   }
 }
 </script>
-<style scoped lang="less">
-  
-</style>

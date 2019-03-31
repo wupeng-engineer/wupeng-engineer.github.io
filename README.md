@@ -27,3 +27,8 @@ yarn run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### 公共样式common.less
+1.圆角border-radius:3px;
+2.边框：border：1px solid #ddd;
+3.input高度为30px；

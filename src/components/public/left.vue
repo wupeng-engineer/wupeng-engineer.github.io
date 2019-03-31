@@ -1,6 +1,6 @@
 <template>
   <div class="left-nav">
-    <div class="top-box"></div>
+    <div class="top-box"><h1>fff</h1></div>
     <div class="tree-nav"></div>
   </div>
 </template>
