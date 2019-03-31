@@ -27,3 +27,7 @@ yarn run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+### 滚动条组件
+```
+npm i vue-gemini-scrollbar --save
+```
