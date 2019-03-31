@@ -3,7 +3,7 @@
 </template>
 
 <script>
-//论坛
+// 论坛
 export default {
   name:"forum",
   data() {
