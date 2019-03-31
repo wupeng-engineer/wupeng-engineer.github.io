@@ -4,7 +4,12 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 import './assets/styles/reset.css'
+import vuescroll from 'vuescroll';
+import 'vuescroll/dist/vuescroll.css';
+
+
 Vue.prototype.$http = axios
+Vue.use(vuescroll)
 Vue.config.productionTip = false
 
 new Vue({
