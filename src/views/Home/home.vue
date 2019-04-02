@@ -6,8 +6,7 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import Header from '@/components/homeComponents/header/header.vue'
+import Header from '@/components/homeComponents/header/index.vue'
 
 export default {
   name: 'home',

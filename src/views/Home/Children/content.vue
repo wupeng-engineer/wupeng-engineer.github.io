@@ -17,7 +17,7 @@
 
 <script>
 //文章列表
-import Card from "@/components/homeComponents/card";
+import Card from "@/components/homeComponents/card/index.vue";
 export default {
   name: "content",
   data() {

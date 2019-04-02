@@ -36,7 +36,7 @@ import "./login.less";
 export default {
   data() {
     return {
-      message: "吴小二博客",
+      message: "",
       title: "用户登录",
       name: "用户名：",
       pass: "密码：",
@@ -50,7 +50,7 @@ export default {
       let that = this;
       this.$http({
         method: "post",
-        url: "http://192.168.0.103:3000/api/user/login",
+        url: "/api/user/login",
         data: {
           loginname: this.loginName,
           password: this.password
