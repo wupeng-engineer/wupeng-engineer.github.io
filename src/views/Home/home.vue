@@ -6,12 +6,14 @@
 </template>
 
 <script>
-import Header from '@/components/homeComponents/header/index.vue'
+import Header from "@/components/homeComponents/header/index.vue";
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
     Header
   }
-}
+};
 </script>
+<style lang="less" scoped>
+</style>

@@ -58,7 +58,7 @@ export default {
       })
         .then(function(res) {
           if (res.data.code == 200) {
-            that.$router.push("/about");
+            that.$router.push("/home");
           } else {
             console.log(res.data.message);
           }

@@ -18,9 +18,9 @@ export default new Router({
                 import ( /* webpackChunkName: "home" */ '@/views/Home/home.vue'),
             children: [{
                     path: '/',
-                    name: 'content',
+                    name: 'contents',
                     component: () =>
-                        import ( /* webpackChunkName: "content" */ '@/views/Home/Children/content.vue')
+                        import ( /* webpackChunkName: "contents" */ '@/views/Home/Children/contents.vue')
                 },
                 {
                     path: '/code',

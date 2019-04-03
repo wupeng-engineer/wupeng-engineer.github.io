@@ -8,7 +8,7 @@
           </li>
         </ul>
       </div>
-      <div class="left-blog">吴小二博客</div>
+      <!-- <div class="left-blog">吴小二博客</div> -->
     </div>
   </div>
 </template>
@@ -28,7 +28,6 @@ export default {
   },
   methods: {
       relationClick:function(id,path){
-        console.log(id);
           this.current=id;
           this.$router.push({path:path});
         }
@@ -37,4 +36,5 @@ export default {
 };
 </script>
 <style lang="less">
+
 </style>

@@ -2,28 +2,58 @@
 const Mock = require('mockjs');
 // 获取 mock.Random 对象
 const Random = Mock.Random;
-// mock一组数据
-Mock.mock('/news/index', 'post', function() {
-    let articles = [];
-    for (let i = 0; i < 100; i++) {
-        let newArticleObject = {
-            title: Random.csentence(5, 30), //  Random.csentence( min, max )
-            thumbnail_pic_s: Random.dataImage('300x250', 'mock的图片'), // Random.dataImage( size, text ) 生成一段随机的 Base64 图片编码
-            author_name: Random.cname(), // Random.cname() 随机生成一个常见的中文姓名
-            date: Random.date() + ' ' + Random.time() // Random.date()指示生成的日期字符串的格式,默认为yyyy-MM-dd；Random.time() 返回一个随机的时间字符串
-        }
-        articles.push(newArticleObject)
-    }
 
+const login = Mock.mock('/api/user/login', 'post', function() {
     return {
-        articles: articles
+        code: 200,
+        message: "登录成功！"
     }
 });
-Mock.mock('/user/login', 'post', function() {
+const contents = Mock.mock('/api/home/content', 'get', function() {
     return {
-        articles: {
-            code: 200,
-            message: "登录成功！"
-        }
+        code: 200,
+        message: "获取文章列表",
+        items: [{
+                title: "第一篇文章",
+                contents: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                time: "2019-04-01 13:54:02",
+                info: {
+                    comment: '100',
+                    collect: '20',
+                    glance: '150'
+                }
+            },
+            {
+                title: "第二篇文章",
+                contents: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                time: "2019-04-01 13:54:02",
+                info: {
+                    comment: '100',
+                    collect: '20',
+                    glance: '150'
+                }
+            },
+            {
+                title: "第三篇文章",
+                contents: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                time: "2019-04-01 13:54:02",
+                info: {
+                    comment: '100',
+                    collect: '20',
+                    glance: '150'
+                }
+            },
+            {
+                title: "第四篇文章",
+                contents: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                time: "2019-04-01 13:54:02",
+                info: {
+                    comment: '100',
+                    collect: '20',
+                    glance: '150'
+                }
+            }
+        ]
     }
 });
+module.exports = { login, contents };
