@@ -1,5 +1,5 @@
 <template>
-  <div class="content">论坛</div>
+  <div class="contents">论坛</div>
 </template>
 
 <script>
@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style>
-.content {
+.contents {
   width: 752px;
   position: absolute;
   left: 50%;

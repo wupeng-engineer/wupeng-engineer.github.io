@@ -4,8 +4,8 @@
       <span class="title">{{title}}</span>
       <span class="close" @click="cClick"></span>
     </div>
-    <div class="content-box" @click="oClick(title)">
-      <div class="content">{{content}}</div>
+    <div :class="{'content-box':true,'active':isActive}" @click="oClick(title)">
+      <div class="contents">{{contents}}</div>
     </div>
     <div class="handle-box">
       <div class="time">
@@ -15,9 +15,9 @@
         </span>
       </div>
       <div class="info">
-        <span>评论:0</span>
-        <span>收藏:2</span>
-        <span>浏览:100</span>
+        <span>评论:{{info.comment}}</span>
+        <span>收藏:{{info.collect}}</span>
+        <span>浏览:{{info.glance}}</span>
         <span>分享</span>
       </div>
     </div>
@@ -27,17 +27,20 @@
 <script>
 export default {
   name: "card",
-  props: ["title", "content", "time","index"],
+  props: ["title","time","contents","info"],
   data() {
-    return {};
+    return {
+      isActive:false
+    };
   },
   methods: {
     oClick() {
-      console.log(arguments[0]);
+      this.isActive=true;
       this.$emit("openClick", arguments[0]);
     },
     cClick() {
       this.$emit("closeClick", "all");
+      this.isActive=false;
     }
   },
   components: {}
@@ -77,7 +80,10 @@ export default {
     width: 100%;
     min-height: 100px;
     cursor: pointer;
-    .content {
+    &.active{
+      min-height:650px;
+    }
+    .contents {
       margin: 10px;
       word-wrap: break-word;
       text-indent: 20px;

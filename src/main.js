@@ -8,9 +8,10 @@ import './assets/styles/reset.css'
 
 import 'vuescroll/dist/vuescroll.css';
 // 引入mockjs
-require('./mock/index.js');
+import './mock';
 
 Vue.prototype.$http = axios
+
 Vue.use(vuescroll)
 
 //粒子背景

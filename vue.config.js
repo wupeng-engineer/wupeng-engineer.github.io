@@ -100,14 +100,14 @@ module.exports = {
             errors: true
         }, // 错误、警告在页面弹出
         proxy: {
-            '/api': {
-                target: 'http://localhost:8080',
-                changeOrigin: true, // 允许websockets跨域
-                // ws: true,
-                pathRewrite: {
-                    '^/api': ''
-                }
-            }
+            // '/api': {
+            //     target: 'http://localhost:8080',
+            //     changeOrigin: true, // 允许websockets跨域
+            //     // ws: true,
+            //     pathRewrite: {
+            //         '^/api': '/'
+            //     }
+            // }
         } // 代理转发配置，用于调试环境
     },
     // 第三方插件配置
