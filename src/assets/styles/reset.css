@@ -45,7 +45,7 @@ code,
 kbd,
 samp {
     line-height: 1.5;
-    font-family: tahoma, arial, "Hiragino Sans GB", simsun, sans-serif
+    font-family: tahoma, arial, simsun, sans-serif
 }
 
 h1,
@@ -69,7 +69,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: tahoma, arial, "Hiragino Sans GB", "微软雅黑", simsun, sans-serif
+    font-family: tahoma, arial, "微软雅黑", simsun, sans-serif
 }
 
 h1,
@@ -198,11 +198,13 @@ html {
 }
 
 body {
-    font-family: Arial, "Microsoft Yahei", "Helvetica Neue", Helvetica, sans-serif;
+    font-family:  Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;/* 抗锯齿 */
+    -moz-osx-font-smoothing: grayscale;
     color: #333;
     font-size: .28em;
     line-height: 1;
-    -webkit-text-size-adjust: none;
+    -webkit-text-size-adjust: none;/* 检索或设置移动端页面中对象文本的大小调整 */
 }
 
 hr {

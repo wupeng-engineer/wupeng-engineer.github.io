@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import app from './modules/app'
-import user from './modules/user'
+// import app from './modules/app'
+// import user from './modules/user'
 
 Vue.use(Vuex)
 
@@ -15,7 +15,6 @@ const store = () =>
     mutations: {},
     actions: {
       nuxtServerInit: async ({ commit }, { req, res }) => {
-        // console.log('nuxtServerInit', res.session)
         if (!!req.session && !!req.session.user && !!req.session.user.token) {
           commit('LOGIN', req.session)
         } else {
@@ -24,8 +23,8 @@ const store = () =>
       }
     },
     modules: {
-      app,
-      user
+      // app,
+      // user
     }
   })
 

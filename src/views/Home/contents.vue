@@ -2,23 +2,13 @@
   <div class="contents">
     <vue-scroll :ops="ops">
       <div v-for="(item,key,index ) in items" v-bind:key="index">
-        <Card
-          @openClick="openClick"
-          @closeClick="closeClick"
-          v-show="isShow=='all'||isShow==item.title"
-          :title="item.title"
-          :contents="item.contents"
-          :time="item.time"
-          :info="item.info"
-        ></Card>
+        <Card @openClick="openClick" @closeClick="closeClick" v-show="isShow=='all'||isShow==item.id" :title="item.title" :contents="item.contents" :time="item.time" :info="item.info" :id="item.id"></Card>
       </div>
     </vue-scroll>
   </div>
 </template>
-
 <script>
-//文章列表
-import Card from "@/components/homeComponents/card/index.vue";
+import Card from "@/components/common/card.vue";
 export default {
   name: "contents",
   data() {
@@ -26,7 +16,7 @@ export default {
       isShow: "all",
       ops: {
         bar: {
-          opacity: 0
+          opacity: 1
         }
       },
       items: []
@@ -50,7 +40,6 @@ export default {
       });
   },
   mounted() {
-    //dom渲染后
     this.$nextTick(function() {});
   },
   methods: {
@@ -69,12 +58,8 @@ export default {
 
 <style lang="less" scoped>
 .contents {
-  width: 752px;
-  position: absolute;
-  left: 50%;
-  margin-left: -376px;
-  height: calc(100% - 150px);
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  margin-top: 20px;
 }
 </style>

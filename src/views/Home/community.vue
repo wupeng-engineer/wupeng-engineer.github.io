@@ -1,11 +1,11 @@
 <template>
-  <div  class="contents">社区</div>
+  <div class="contents">社区</div>
 </template>
 
 <script>
 //社区
 export default {
-  name:"community",
+  name: "community",
   data() {
     return {};
   },

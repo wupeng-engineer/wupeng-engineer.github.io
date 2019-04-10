@@ -1,0 +1,67 @@
+<template>
+  <div class="logo">
+
+  </div>
+</template>
+
+<script>
+export default {
+  name: "logo",
+  data() {
+    return {};
+  },
+  methods: {},
+  components: {}
+};
+</script>
+<style lang="less" scoped>
+.logo {
+  width: 100%;
+  height: 50px;
+  background-color: #e74c3c;
+  animation: bg-color 10s infinite;
+  -webkit-animation: bg-color 10s infinite;
+}
+
+@-webkit-keyframes bg-color {
+  0% {
+    background-color: #e74c3c;
+  }
+  20% {
+    background-color: #f1c40f;
+  }
+  40% {
+    background-color: #1abc9c;
+  }
+  60% {
+    background-color: #3498db;
+  }
+  80% {
+    background-color: #9b59b6;
+  }
+  100% {
+    background-color: #e74c3c;
+  }
+}
+
+@keyframes bg-color {
+  0% {
+    background-color: #e74c3c;
+  }
+  20% {
+    background-color: #f1c40f;
+  }
+  40% {
+    background-color: #1abc9c;
+  }
+  60% {
+    background-color: #3498db;
+  }
+  80% {
+    background-color: #9b59b6;
+  }
+  100% {
+    background-color: #e74c3c;
+  }
+}
+</style>

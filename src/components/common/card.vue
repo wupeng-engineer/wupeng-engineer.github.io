@@ -4,7 +4,7 @@
       <span class="title">{{title}}</span>
       <span class="close" @click="cClick"></span>
     </div>
-    <div :class="{'content-box':true,'active':isActive}" @click="oClick(title)">
+    <div :class="{'content-box':true,'active':isActive}" @click="oClick(id)">
       <div class="contents">{{contents}}</div>
     </div>
     <div class="handle-box">
@@ -27,20 +27,20 @@
 <script>
 export default {
   name: "card",
-  props: ["title","time","contents","info"],
+  props: ["title", "time", "contents", "info", "id"],
   data() {
     return {
-      isActive:false
+      isActive: false
     };
   },
   methods: {
     oClick() {
-      this.isActive=true;
+      this.isActive = true;
       this.$emit("openClick", arguments[0]);
     },
     cClick() {
       this.$emit("closeClick", "all");
-      this.isActive=false;
+      this.isActive = false;
     }
   },
   components: {}
@@ -49,12 +49,14 @@ export default {
 
 <style lang="less" scoped>
 .card {
-  width: 712px;
-  margin: 20px;
+  width: 752px;
+  margin: 5px auto;
   border: 1px solid #d3d3d3;
   border-radius: 5px;
   background: #fff;
-  box-shadow: 11px 11px 1px #7e717142;
+  &:hover {
+    box-shadow: 0px 0px 10px #7e717148;
+  }
   .title-box {
     width: 100%;
     height: 40px;
@@ -75,13 +77,15 @@ export default {
     }
   }
   .content-box {
+    padding: 5px 0px;
+    overflow: hidden;
     font-size: 16px;
     word-wrap: break-word;
     width: 100%;
     min-height: 100px;
     cursor: pointer;
-    &.active{
-      min-height:650px;
+    &.active {
+      height: 100%;
     }
     .contents {
       margin: 10px;

@@ -1,10 +1,15 @@
 const path = require('path')
 
-// function resolve(dir) {
-//     return path.join(__dirname, dir)
-// }
 const UglifyPlugin = require('uglifyjs-webpack-plugin')
-
+function addStyleResource(rule) {
+    rule.use('style-resource')
+        .loader('style-resources-loader')
+        .options({
+            patterns: [
+                path.resolve(__dirname, 'src/assets/styles/less/theme/concise.less')
+            ],
+        })
+}
 module.exports = {
     publicPath: './', // 基本路径
     outputDir: 'dist', // 输出文件目录
@@ -12,16 +17,8 @@ module.exports = {
     // see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
     // webpack配置
     chainWebpack: (config) => {
-        // config.resolve.alias
-        //     .set('src', resolve('src'))
-        //     .set('public', resolve('public'))
-        //     .set('assets', resolve('src/assets'))
-        //     .set('components', resolve('src/components'))
-        //     .set('axios', resolve('src/axios'))
-        //     .set('mock', resolve('src/mock'))
-        //     .set('router', resolve('src/router'))
-        //     .set('store', resolve('src/store'))
-        //     .set('views', resolve('src/views'))
+        const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
+        types.forEach(type => addStyleResource(config.module.rule('less').oneOf(type)))
     },
     configureWebpack: (config) => {
         if (process.env.NODE_ENV === 'production') {
@@ -69,9 +66,7 @@ module.exports = {
             // 开发生产共同配置
             resolve: {
                 alias: {
-                    '@': path.resolve(__dirname, './src'),
-                    '@/components': path.resolve(__dirname, './src/components'),
-                    '@/views': path.resolve(__dirname, './src/views')
+                    '@': path.resolve(__dirname, './src')
                 } // 别名配置
             }
         })
@@ -83,7 +78,10 @@ module.exports = {
         sourceMap: false, // 开启 CSS source maps?
         loaderOptions: {
             css: {}, // 这里的选项会传递给 css-loader
-            postcss: {} // 这里的选项会传递给 postcss-loader
+            postcss: {}, // 这里的选项会传递给 postcss-loader
+            less: {// 这里的选项会传递给 less-loader
+                javascriptEnabled: true
+            }
         }, // css预设器配置项
         modules: false // 启用 CSS modules for all css / pre-processor files.
     },
@@ -105,7 +103,7 @@ module.exports = {
                 changeOrigin: true, // 允许websockets跨域
                 // ws: true,
                 pathRewrite: {
-                    '^/api': '/'
+                    '^/api': '/mock'
                 }
             }
         } // 代理转发配置，用于调试环境

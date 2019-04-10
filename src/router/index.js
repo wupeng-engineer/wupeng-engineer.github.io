@@ -1,46 +1,43 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import index from '@/views/index.vue'
+import index from '@/views/Home.vue'
 Vue.use(Router)
-
 export default new Router({
     mode: 'history',
     base: process.env.BASE_URL,
     routes: [{
+        path: '/',
+        name: 'home',
+        component: index,
+        children: [{
             path: '/',
-            name: 'index',
-            component: index,
+            name: 'contents',
+            component: () =>
+                import( /* webpackChunkName: "contents" */ '@/views/Home/contents.vue')
         },
         {
-            path: '/home',
-            name: 'home',
+            path: '/code',
+            name: 'code',
             component: () =>
-                import ( /* webpackChunkName: "home" */ '@/views/Home/home.vue'),
-            children: [{
-                    path: '/',
-                    name: 'contents',
-                    component: () =>
-                        import ( /* webpackChunkName: "contents" */ '@/views/Home/Children/contents.vue')
-                },
-                {
-                    path: '/code',
-                    name: 'code',
-                    component: () =>
-                        import ( /* webpackChunkName: "code" */ '@/views/Home/Children/code.vue')
-                },
-                {
-                    path: '/forum',
-                    name: 'forum',
-                    component: () =>
-                        import ( /* webpackChunkName: "forum" */ '@/views/Home/Children/forum.vue')
-                },
-                {
-                    path: '/community',
-                    name: 'community',
-                    component: () =>
-                        import ( /* webpackChunkName: "community" */ '@/views/Home/Children/community.vue')
-                }
-            ]
+                import( /* webpackChunkName: "code" */ '@/views/Home/code.vue')
+        },
+        {
+            path: '/forum',
+            name: 'forum',
+            component: () =>
+                import( /* webpackChunkName: "forum" */ '@/views/Home/forum.vue')
+        },
+        {
+            path: '/community',
+            name: 'community',
+            component: () =>
+                import( /* webpackChunkName: "community" */ '@/views/Home/community.vue')
         }
-    ]
+        ]
+    }, {
+        path: '/login',
+        name: 'login',
+        component: () =>
+            import( /* webpackChunkName: "login" */ '@/views/Login.vue')
+    }]
 })
