@@ -61,3 +61,8 @@ hoverMode: String类型。默认true。可用的hover模式有: "grab", "repulse
 clickEffect: 布尔类型。默认true。是否有click特效。
 clickMode: String类型。默认true。可用的click模式有: "push", "remove", "repulse", "bubble"。
 ````
+
+
+```
+
+```
