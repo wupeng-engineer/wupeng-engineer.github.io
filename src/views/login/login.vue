@@ -1,5 +1,5 @@
 <template>
-   <div class="wrap">
+  <div class="wrap">
     <div class="login-wrap">
       <div class="login-header">
         <span class="header-written">{{message}}</span>
@@ -21,7 +21,7 @@
           </p>
           <div class="btn-box">
             <a class="login-btn" @click="login">登录</a>
-            <a class="close-btn">取消</a>
+            <a class="close-btn" @click="closeLogin">取消</a>
           </div>
         </form>
       </div>
@@ -29,8 +29,10 @@
   </div>
 </template>
 <script>
+import { uLogin } from "@/views/interface/res.js";
+import "@/assets/login.less";
 export default {
-  name:"login",
+  name: "login",
   data() {
     return {
       message: "",
@@ -44,25 +46,14 @@ export default {
   },
   methods: {
     login() {
-      let that = this;
-      this.$http({
-        method: "post",
-        url: "/api/user/login",
-        data: {
-          loginname: this.loginName,
-          password: this.password
-        }
-      })
-        .then(function(res) {
-          if (res.data.code == 200) {
-            that.$router.push("/home");
-          } else {
-            console.log(res.data.message);
-          }
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
+      let userInfo = {
+        loginName: this.loginName,
+        password: this.password
+      };
+      this.$store.dispatch("SignIn",userInfo);
+    },
+    closeLogin() {
+      this.$store.commit("SET_LOGIN",false);
     }
   },
   props: {
@@ -70,3 +61,5 @@ export default {
   }
 };
 </script>
+<style lang="less" scoped>
+</style>

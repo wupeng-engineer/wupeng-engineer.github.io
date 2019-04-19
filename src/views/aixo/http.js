@@ -20,8 +20,9 @@ const httpServer = (opts) => {
         },
     };
     if (auth.getToken()) {
-        const token = auth.getToken();
-        httpDefaultOpts.headers.systoken = token;
+        // const token = auth.getToken();
+        // httpDefaultOpts.headers.systoken = token;
+        httpDefaultOpts.headers.systoken = 123;
     }
     if (opts.method == 'get') {
         delete httpDefaultOpts.data;

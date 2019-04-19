@@ -5,11 +5,20 @@
       <div class="yd-nav" v-for="(item,key,index) in items" v-bind:key="index" v-bind:id="item.id">
         <a>{{item.title}}</a>
       </div>
+      <div class="yd-nav" v-if="!this.$store.getters.getToken">
+        <a @click="signIn">登录</a>
+      </div>
+      <div class="yd-nav" v-if="this.$store.getters.getToken">
+        <a @click="openInfo">个人中心</a>
+      </div>
+      <div class="yd-nav" v-if="this.$store.getters.getToken">
+        <a @click="signOut">退出</a>
+      </div>
     </div>
   </div>
 </template>
 <script>
-import navBar from "@/views/interface/res.js";
+import { getNavBar } from "@/views/interface/res.js";
 export default {
   data() {
     return {
@@ -18,17 +27,27 @@ export default {
   },
   created() {
     var that = this;
-    navBar().then(res => {
-      console.log(res);
+    getNavBar().then(res => {
       that.items = res.items;
     });
+  },
+  methods: {
+    signIn(){
+      this.$store.commit("SET_LOGIN", true);
+    },
+    openInfo(){
+
+    },
+    signOut(){
+       this.$store.dispatch("SignOut");
+    }
   }
 };
 </script>
 <style lang="less" scoped>
 .yd-container-header {
   width: 100%;
-  height:60px;
+  height: 60px;
   .yd-logo {
     float: left;
     width: 200px;
@@ -46,10 +65,21 @@ export default {
       height: 30px;
       margin: 15px 5px;
       text-align: center;
+      cursor: pointer;
       a {
         line-height: 30px;
       }
     }
+  }
+}
+</style >
+<style lang="less">
+.yd-nav {
+  a{
+     color: #373838;
+  }
+  &:hover a {
+    color: #0aa1ed;
   }
 }
 </style>

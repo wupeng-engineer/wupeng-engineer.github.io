@@ -8,12 +8,12 @@ export default new Router({
             path: '/',
             redirect: '/home',
         },
-        {
-            path: '/login',
-            name: 'login',
-            component: () =>
-                import ('@/views/login/login.vue'),
-        },
+        // {
+        //     path: '/login',
+        //     name: 'login',
+        //     component: () =>
+        //         import ('@/views/login/login.vue'),
+        // },
         {
             path: '/home',
             name: 'home',

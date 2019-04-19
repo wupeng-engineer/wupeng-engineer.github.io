@@ -1,9 +1,15 @@
 import Http from '@/views/aixo/http';
 
-const navBar = function() {
+const getNavBar = function() {
     return Http({
         url: '/api/home/navBar',
         method: 'get',
     });
 };
-export default navBar;
+const uLogin = function({ loginname, password }) {
+    return Http({
+        url: '/api/user/login',
+        method: 'post',
+    });
+};
+export { uLogin, getNavBar };

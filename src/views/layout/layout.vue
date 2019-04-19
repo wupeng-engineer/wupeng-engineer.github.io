@@ -27,7 +27,7 @@ export default {
     background: #f1f1f1;
     position: fixed;
     top: 0;
-    z-index: 999;
+    z-index: 10;
     width: 100%;
     height: 60px;
     border: 1px solid #d3d3d3;
