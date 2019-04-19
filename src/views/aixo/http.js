@@ -32,7 +32,7 @@ const httpServer = (opts) => {
     const promise = new Promise(function(resolve, reject) {
         Axios(httpDefaultOpts).then(
             (res) => {
-                if (res.data.code == -3) {
+                if (res.data.code == 200) {
                     resolve(res.data);
                 } else {
                     resolve(res.data);

@@ -5,7 +5,9 @@
         <Navbar></Navbar>
       </div>
       <div class="yd-main">
-        <div class="yd-content"></div>
+        <div class="yd-content">
+          <router-view></router-view>
+        </div>
         <div class="yd-content-footer"></div>
       </div>
     </div>
@@ -39,6 +41,7 @@ export default {
     width: 100%;
     min-height: calc(100% - 60px);
     .yd-content {
+      height: 1000px;
       padding: 20px 200px 220px;
     }
     .yd-content-footer {

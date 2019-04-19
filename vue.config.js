@@ -44,6 +44,7 @@ module.exports = {
         }
         Object.assign(config, {
             resolve: {
+                extensions: ['.js', '.vue', '.json', ".css", ".less"],
                 alias: {
                     '@': path.resolve(__dirname, './src'),
                     '@/views': path.resolve(__dirname, './src/views')

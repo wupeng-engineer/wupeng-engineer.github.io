@@ -61,12 +61,13 @@ export default {
     .yd-nav {
       background: #d3d3d3;
       display: inline-block;
-      width: 80px;
-      height: 30px;
       margin: 15px 5px;
       text-align: center;
       cursor: pointer;
       a {
+        display: inline-block;
+        height: 30px;
+        width:80px;
         line-height: 30px;
       }
     }

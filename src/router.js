@@ -8,16 +8,16 @@ export default new Router({
             path: '/',
             redirect: '/home',
         },
-        // {
-        //     path: '/login',
-        //     name: 'login',
-        //     component: () =>
-        //         import ('@/views/login/login.vue'),
-        // },
         {
             path: '/home',
             name: 'home',
-            component: Layout
+            component: Layout,
+            children: [{
+                path: '/',
+                name: 'toast',
+                component: () =>
+                    import ('@/views/layout/content/toast.vue'),
+            }]
         },
         {
             path: '/haveNot',
