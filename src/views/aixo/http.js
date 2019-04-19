@@ -1,10 +1,9 @@
 import Axios from 'axios';
 import auth from '@/views/utils/auth';
-
+import Toast from '@/components/Toast';
 const httpServer = (opts) => {
-    const httpDefaultOpts = { // http默认配置
+    const httpDefaultOpts = {
         method: opts.method,
-        // baseURL: 'https://xxxx.com', // 测试
         url: opts.url,
         timeout: 100000,
         params: opts.params,

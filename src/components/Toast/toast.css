@@ -14,7 +14,7 @@
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     text-align: center;
-    z-index: 9999;
+    z-index: 999999;
     font-size: 14px;
     color: #fff;
     border-radius: 5px;

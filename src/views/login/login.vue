@@ -50,7 +50,10 @@ export default {
         loginName: this.loginName,
         password: this.password
       };
-      this.$store.dispatch("SignIn",userInfo);
+      let that=this;
+      this.$store.dispatch("SignIn",userInfo).then((res)=>{
+        that.$toast.showMsgBox({message:res.message})
+      });
     },
     closeLogin() {
       this.$store.commit("SET_LOGIN",false);

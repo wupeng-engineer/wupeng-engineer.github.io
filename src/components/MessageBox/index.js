@@ -38,7 +38,7 @@ MessageBox.install = function(Vue, options) {
 };
 export default MessageBox;
 /**
- * his.$msgBox.showMsgBox({
+ * this.$msgBox.showMsgBox({
  *    title: '添加分类',
  *    content: '请填写分类名称',
  *    isShowInput: true

@@ -5,7 +5,30 @@ html {
     font-size: 12px
 }
 
-* {
+body,
+ul,
+ol,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+form,
+fieldset,
+legend,
+input,
+textarea,
+button,
+p,
+blockquote,
+th,
+td,
+pre,
+xmp {
     margin: 0;
     padding: 0
 }
@@ -175,15 +198,13 @@ html {
 }
 
 body {
-    font-family: Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    /* 抗锯齿 */
+    font-family:  Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;/* 抗锯齿 */
     -moz-osx-font-smoothing: grayscale;
     color: #333;
     font-size: .28em;
     line-height: 1;
-    -webkit-text-size-adjust: none;
-    /* 检索或设置移动端页面中对象文本的大小调整 */
+    -webkit-text-size-adjust: none;/* 检索或设置移动端页面中对象文本的大小调整 */
 }
 
 hr {

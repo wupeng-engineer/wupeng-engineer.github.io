@@ -1,15 +1,20 @@
 import { uLogin } from "@/views/interface/res.js";
 import auth from '@/views/utils/auth';
-import vm from 'vue';
 const actions = {
     async SignIn({ commit }, userInfo) {
         return new Promise((resolve, reject) => {
             uLogin(userInfo).then((res) => {
-                auth.setToken(res.systoken);
-                commit('SET_TOKEN', res.systoken);
-                commit('SET_LOGIN', false);
-                vm.$toast({ message: res.message })
-                resolve(res);
+                if (res.code == 200) {
+                    auth.setToken(res.systoken);
+                    commit('SET_TOKEN', res.systoken);
+                    commit('SET_LOGIN', false);
+                }
+                if (res.data) {
+                    resolve(res);
+                } else {
+                    resolve(res.message);
+                }
+
             }).catch((error) => {
                 reject(error);
             });

@@ -9,7 +9,6 @@ var toastVM = null,
     showLoad = false;
 
 Toast.install = function(Vue, options) {
-    const ToastBoxInstance = Vue.extend(toast);
     var opt = {
         time: '2500'
     };
@@ -17,6 +16,7 @@ Toast.install = function(Vue, options) {
         opt[property] = options[property];
     }
     const initInstance = () => {
+        const ToastBoxInstance = Vue.extend(toast);
         toastVM = new ToastBoxInstance()
         var tpl = toastVM.$mount().$el;
         document.body.appendChild(tpl);
@@ -26,25 +26,27 @@ Toast.install = function(Vue, options) {
         }, opt.duration)
     };
 
-    Vue.prototype.$toast = (options) => {
-        if (!toastVM) {
-            initInstance();
-        }
-        if (typeof options === 'string') {
-            toastVM.content = options;
-        } else if (typeof options === 'object') {
-            Object.assign(toastVM, options);
-        }
-        return toastVM()
-            .then(val => {
-                toastVM = null;
-                return Promise.resolve(val);
-            })
-            .catch(err => {
-                toastVM = null;
-                return Promise.reject(err);
-            });
+    Vue.prototype.$toast = {
+        showMsgBox(options) {
+            if (!toastVM) {
+                initInstance();
+            }
+            if (typeof options === 'string') {
+                toastVM.content = options;
+            } else if (typeof options === 'object') {
+                Object.assign(toastVM, options);
+            }
+            // return toastVM.showMsgBox()
+            //     .then(val => {
+            //         toastVM = null;
+            //         return Promise.resolve(val);
+            //     })
+            //     .catch(err => {
+            //         toastVM = null;
+            //         return Promise.reject(err);
+            //     });
 
+        }
     };
 
     Vue.prototype.$loading = function(tips, type) {

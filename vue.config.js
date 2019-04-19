@@ -74,15 +74,15 @@ module.exports = {
             warnings: true,
             errors: true
         },
-        proxy: {
-            // '/api': {
-            //     target: 'http://localhost:8081',
-            //     changeOrigin: true,
-            //     pathRewrite: {
-            //         '^/api': ''
-            //     }
-            // }
-        }
+        // proxy: {
+        //     // '/api': {
+        //     //     target: 'http://localhost:8081',
+        //     //     changeOrigin: true,
+        //     //     pathRewrite: {
+        //     //         '^/api': ''
+        //     //     }
+        //     // }
+        // }
     },
     pluginOptions: {}
 }
