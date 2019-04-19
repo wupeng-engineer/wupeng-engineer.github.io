@@ -1,4 +1,4 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["npm.vuex"],{"2f62":function(t,e,n){"use strict";
+(window.webpackJsonp=window.webpackJsonp||[]).push([["vuex"],{"2f62":function(t,e,n){"use strict";
 /**
  * vuex v3.1.0
  * (c) 2019 Evan You

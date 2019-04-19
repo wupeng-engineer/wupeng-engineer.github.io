@@ -1,4 +1,4 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["npm.mockjs"],{"96eb":function(module,exports,__webpack_require__){var c;c=function(){return function(n){var r={};function a(t){if(r[t])return r[t].exports;var e=r[t]={exports:{},id:t,loaded:!1};return n[t].call(e.exports,e,e.exports,a),e.loaded=!0,e.exports}return a.m=n,a.c=r,a.p="",a(0)}([function(t,e,n){var r,a=n(1),o=n(3),u=n(5),l=n(20),i=n(23),c=n(25);"undefined"!=typeof window&&(r=n(27)
+(window.webpackJsonp=window.webpackJsonp||[]).push([["mockjs"],{"96eb":function(module,exports,__webpack_require__){var c;c=function(){return function(n){var r={};function a(t){if(r[t])return r[t].exports;var e=r[t]={exports:{},id:t,loaded:!1};return n[t].call(e.exports,e,e.exports,a),e.loaded=!0,e.exports}return a.m=n,a.c=r,a.p="",a(0)}([function(t,e,n){var r,a=n(1),o=n(3),u=n(5),l=n(20),i=n(23),c=n(25);"undefined"!=typeof window&&(r=n(27)
 /*!
 	    Mock - 模拟请求 & 模拟数据
 	    https://github.com/nuysoft/Mock

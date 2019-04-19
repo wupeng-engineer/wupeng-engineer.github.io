@@ -1,55 +1,53 @@
 <template>
-    <div>
-        <div class="t-container">
-            <div class="t-navbar-con">
-                <!-- 左侧导航 -->
-                <!-- <Navbar></Navbar> -->
-            </div>
-            <!-- 主要内容 -->
-            <div class="t-po-r">
-                <!-- <AppMain></AppMain> -->
-                <div class="AppMainBo">后台管理系统</div>
-                <div class="t-prompt-content">
-                    <!-- <Prompt></Prompt> -->
-                </div>
-            </div>
-        </div>  
+  <div>
+    <div class="yd-container">
+      <div class="yd-header">
+        <Navbar></Navbar>
+      </div>
+      <div class="yd-main">
+        <div class="yd-content"></div>
+        <div class="yd-content-footer"></div>
+      </div>
     </div>
+  </div>
 </template>
+<script>
+import { Navbar } from "@/views/layout/content";
+export default {
+  components: {
+    Navbar
+  }
+};
+</script>
 <style lang="less" scoped>
-.t-container{
-    width: 100%;
-    padding: 0 200px;
-}
-.t-navbar-con{
+.yd-container {
+  background: #f1f1f1;
+  width: 100%;
+  .yd-header {
+    background: #f1f1f1;
     position: fixed;
-    left: 0;
     top: 0;
-    width: 200px;
-    height: 100%;
-    box-shadow: 0 0 1px 0 rgba(0,0,0,.2);
-    z-index: 99;
-}
-.t-prompt-content{
-    position: absolute;
-    width: 200px;
-    right: -200px;
-    bottom: 0;
-    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2);
-    z-index: 99;
-    top: 0;
-    background: white;
-}
-.t-po-r{
-    position: relative;
-}
-.AppMainBo{
-    text-align: center;
+    z-index: 999;
     width: 100%;
-    height: 50px;
-    padding: 10px;
-    line-height: 30px;
-    font-size: 14px;
-    color: rgb(51,51,51);
+    height: 60px;
+    border: 1px solid #d3d3d3;
+    box-shadow: 0px 2px 1px #d3d3d381;
+  }
+  .yd-main {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    min-height: calc(100% - 60px);
+    .yd-content {
+      padding: 20px 200px 220px;
+    }
+    .yd-content-footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 200px;
+      background: rgb(34, 34, 34);
+    }
+  }
 }
 </style>

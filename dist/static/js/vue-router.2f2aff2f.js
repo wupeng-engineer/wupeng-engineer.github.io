@@ -1,4 +1,4 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["npm.vue-router"],{"8c4f":function(t,e,r){"use strict";
+(window.webpackJsonp=window.webpackJsonp||[]).push([["vue-router"],{"8c4f":function(t,e,r){"use strict";
 /*!
   * vue-router v3.0.2
   * (c) 2018 Evan You

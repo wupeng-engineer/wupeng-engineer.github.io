@@ -1,15 +1,25 @@
-
 const Mock = require('mockjs');
 
 const Random = Mock.Random;
 
-const login = Mock.mock('/api/user/login', 'post', function () {
+const login = Mock.mock('/api/user/login', 'post', function() {
     return {
         code: 200,
         message: "登录成功！"
     }
 });
-const contents = Mock.mock('/api/home/content', 'get', function () {
+const navBar = Mock.mock('/api/home/navBar', 'get', function() {
+    return {
+        code: 200,
+        message: "登录成功！",
+        items: [{ title: "首页", id: "home", tabblank: "/home" },
+            { title: "代码", id: "code", tabblank: "/code" },
+            { title: "论坛", id: "forum", tabblank: "/forum" },
+            { title: "社区", id: "community", tabblank: "/community" }
+        ]
+    }
+});
+const contents = Mock.mock('/api/home/content', 'get', function() {
     return {
         code: 200,
         message: "获取文章列表",
@@ -66,4 +76,4 @@ const contents = Mock.mock('/api/home/content', 'get', function () {
         }]
     }
 });
-module.exports = { login, contents };
+module.exports = { login, contents, navBar };
