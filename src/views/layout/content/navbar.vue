@@ -2,8 +2,14 @@
   <div class="yd-container-header">
     <div class="yd-logo"></div>
     <div class="yd-header-nav">
-      <div class="yd-nav" v-for="(item,key,index) in items" v-bind:key="index" v-bind:id="item.id">
-        <a>{{item.title}}</a>
+      <div
+        class="yd-nav"
+        v-for="(item,key,index) in items"
+        v-bind:key="index"
+        v-bind:id="item.id"
+        :class="{active:isActive==item.id}"
+      >
+        <a @click="setNav(item.id,item.tabblank)">{{item.title}}</a>
       </div>
       <div class="yd-nav" v-if="!this.$store.getters.getToken">
         <a @click="signIn">登录</a>
@@ -15,6 +21,14 @@
         <a @click="signOut">退出</a>
       </div>
     </div>
+    <ul class="yd-theme">
+      <li
+        v-for="(theme,key,index) in themes"
+        v-bind:key="index"
+        :class="theme"
+        @click="setColor(theme)"
+      ></li>
+    </ul>
   </div>
 </template>
 <script>
@@ -22,7 +36,9 @@ import { getNavBar } from "@/views/interface/res.js";
 export default {
   data() {
     return {
-      items: []
+      themes: ["default", "red", "black"],
+      items: [],
+      isActive: "home"
     };
   },
   created() {
@@ -31,15 +47,21 @@ export default {
       that.items = res.items;
     });
   },
+  updated() {},
   methods: {
-    signIn(){
+    signIn() {
       this.$store.commit("SET_LOGIN", true);
     },
-    openInfo(){
-
+    openInfo() {},
+    signOut() {
+      this.$store.dispatch("SignOut");
     },
-    signOut(){
-       this.$store.dispatch("SignOut");
+    setColor(command) {
+      document.getElementById("app").className = "theme-" + command;
+    },
+    setNav(id, path) {
+      this.isActive = id;
+      this.$router.push({ path: path });
     }
   }
 };
@@ -55,20 +77,29 @@ export default {
     background: #d3d3d3;
     margin: 5px 20px;
   }
+  .yd-theme {
+    float: right;
+    height: 60px;
+    li {
+      float: left;
+      width: 30px;
+      height: 30px;
+      margin: 15px 5px;
+      cursor: pointer;
+      border: 1px solid #ffffff;
+      box-sizing: border-box;
+    }
+  }
   .yd-header-nav {
     float: right;
     margin-right: 20px;
     .yd-nav {
-      background: #d3d3d3;
       display: inline-block;
       margin: 15px 5px;
       text-align: center;
       cursor: pointer;
       a {
         display: inline-block;
-        height: 30px;
-        width:80px;
-        line-height: 30px;
       }
     }
   }
@@ -76,11 +107,22 @@ export default {
 </style >
 <style lang="less">
 .yd-nav {
-  a{
-     color: #373838;
+  background: #d3d3d3;
+  a {
+    height: 30px;
+    width: 80px;
+    color: #373838;
+    line-height: 30px;
   }
   &:hover a {
-    color: #0aa1ed;
+    color: #ffffff;
+  }
+  &.active {
+    background: #0aa1ed;
+
+    a {
+      color: #d3d3d3;
+    }
   }
 }
 </style>

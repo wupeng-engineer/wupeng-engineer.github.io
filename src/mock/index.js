@@ -28,9 +28,12 @@ const login = Mock.mock('/api/user/login', 'post', function(data) {
 });
 const navBar = Mock.mock('/api/home/navBar', 'get', function() {
     let data = [{ title: "首页", id: "home", tabblank: "/home" },
-        { title: "代码", id: "code", tabblank: "/code" },
-        { title: "论坛", id: "forum", tabblank: "/forum" },
-        { title: "社区", id: "community", tabblank: "/community" }
+        { title: "时间轴", id: "archives", tabblank: "/archives" },
+        { title: "分类", id: "categories", tabblank: "/categories" },
+        { title: "标签", id: "tag", tabblank: "/tag" },
+        { title: "工具", id: "collections", tabblank: "/collections" },
+        { title: "实例", id: "demo", tabblank: "/demo" },
+        { title: "关于", id: "about", tabblank: "/about" }
     ]
     return Result.success({ systoken: 123, data: data });
 });

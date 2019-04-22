@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="theme-default">
     <Login v-if="this.$store.getters.getLogin"></Login>
     <router-view/>
   </div>
@@ -19,3 +19,7 @@ export default {
   }
 };
 </script>
+<style src="@/assets/theme/color.less" lang="less">
+
+</style>
+

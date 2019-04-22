@@ -23,10 +23,8 @@ export default {
 </script>
 <style lang="less" scoped>
 .yd-container {
-  background: #f1f1f1;
   width: 100%;
   .yd-header {
-    background: #f1f1f1;
     position: fixed;
     top: 0;
     z-index: 10;
@@ -41,8 +39,10 @@ export default {
     width: 100%;
     min-height: calc(100% - 60px);
     .yd-content {
-      height: 1000px;
-      padding: 20px 200px 220px;
+      width: 720px;
+      margin: 0 auto;
+      padding: 20px 5px 220px;
+      overflow: hidden;
     }
     .yd-content-footer {
       position: absolute;
