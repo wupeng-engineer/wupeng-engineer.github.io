@@ -13,6 +13,16 @@ export default new Router({
             name: 'home',
             component: Layout,
             children: [{
+                path: '/edit',
+                name: 'edit',
+                component: () =>
+                    import ('@/components/markdown/edit'),
+            }, {
+                path: '/',
+                name: 'toast',
+                component: () =>
+                    import ('@/views/layout/test/toast'),
+            }, {
                 path: '/',
                 name: 'home',
                 component: () =>

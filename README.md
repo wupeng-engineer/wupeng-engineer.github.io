@@ -62,7 +62,12 @@ clickEffect: 布尔类型。默认true。是否有click特效。
 clickMode: String类型。默认true。可用的click模式有: "push", "remove", "repulse", "bubble"。
 ````
 
-
+##提交dist 到 github gh-pages
+```
+git subtree push --prefix dist origin gh-pages
 ```
 
+##markdown
+```
+npm install mavon-editor --save
 ```

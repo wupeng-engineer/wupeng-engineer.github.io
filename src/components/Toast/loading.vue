@@ -1,5 +1,5 @@
 <template>
-  <div v-show="show" class="lx-load-mark">
+  <div class="lx-load-mark">
     <div class="lx-load-box">
       <div class="lx-loading">
         <div class="loading_leaf loading_leaf_0"></div>
@@ -15,7 +15,7 @@
         <div class="loading_leaf loading_leaf_10"></div>
         <div class="loading_leaf loading_leaf_11"></div>
       </div>
-      <div class="lx-load-content">{{tips}}</div>
+      <div class="lx-load-content">{{content}}</div>
     </div>
   </div>
 </template>
@@ -23,8 +23,7 @@
 export default {
   data() {
     return {
-      tips: "",
-      show: false
+      content: ""
     };
   }
 };

@@ -1,87 +1,46 @@
-// /src/components/MessageBox/index.js
-
 import toast from './toast.vue';
 import loading from './loading.vue';
 // 定义插件对象
-var Toast = {};
-var toastVM = null,
-    loadNode = null,
-    showLoad = false;
+const Toast = {};
 
 Toast.install = function(Vue, options) {
-    var opt = {
-        time: '2500'
-    };
-    for (var property in options) {
-        opt[property] = options[property];
-    }
-    const initInstance = () => {
-        const ToastBoxInstance = Vue.extend(toast);
-        toastVM = new ToastBoxInstance()
+    console.log("options", options);
+    var toastVM, loadVM;
+    Vue.prototype.$toast = (_opt, callback) => {
+        const toastTip = Vue.extend(toast);
+        toastVM = new toastTip({ data: _opt });
         var tpl = toastVM.$mount().$el;
         document.body.appendChild(tpl);
-        toastVM.show = true;
-        setTimeout(function() {
-            toastVM.show = false;
-        }, opt.duration)
+        callback && callback();
     };
-
-    Vue.prototype.$toast = {
-        showMsgBox(options) {
-            if (!toastVM) {
-                initInstance();
-            }
-            if (typeof options === 'string') {
-                toastVM.content = options;
-            } else if (typeof options === 'object') {
-                Object.assign(toastVM, options);
-            }
-            // return toastVM.showMsgBox()
-            //     .then(val => {
-            //         toastVM = null;
-            //         return Promise.resolve(val);
-            //     })
-            //     .catch(err => {
-            //         toastVM = null;
-            //         return Promise.reject(err);
-            //     });
-
-        }
-    };
-
-    Vue.prototype.$loading = function(tips, type) {
+    ["success", "error", "info", "warn"].forEach(type => {
+        Vue.prototype.$toast[type] = (opt, callback) => {
+            opt.type = type;
+            return Vue.prototype.$toast(opt, callback);
+        };
+    });
+    Vue.prototype.$loading = (_opt, type, callback) => {
         if (type == 'close') {
-            loadNode.show = showLoad = true;
-            showLoad = false;
-        } else {
-            if (showLoad) {
-                // 如果loading还在，则不再执行
+            if (!loadVM)
                 return;
-            }
+            loadVM.$mount().$destroy(true);
+            loadVM.$mount().$el.parentNode.removeChild(loadVM.$mount().$el);
+            loadVM = null;
+        } else {
+            if (loadVM)
+                return;
             var loadTpl = Vue.extend(loading);
-            loadNode = new loadTpl();
-            var tpl = loadNode.$mount().$el;
-
+            loadVM = new loadTpl({ data: { content: _opt } });
+            var tpl = loadVM.$mount().$el;
             document.body.appendChild(tpl);
-            loadNode.show = showLoad = true;
         }
+        callback && callback();
     };
 
-    ['open', 'close'].forEach(function(type) {
-        Vue.prototype.$loading[type] = function(tips) {
-            return Vue.prototype.$loading(tips, type)
+    ['open', 'close'].forEach(type => {
+        Vue.prototype.$loading[type] = (_opt, callback) => {
+            return Vue.prototype.$loading(_opt, type, callback)
         }
     });
 };
 export default Toast;
-/**
- * his.$msgBox.showMsgBox({
- *    title: '添加分类',
- *    content: '请填写分类名称',
- *    isShowInput: true
- *}).then(async (val) => {
- *    // ...        
- *}).catch(() => {
- *    // ...
- *});    
- */

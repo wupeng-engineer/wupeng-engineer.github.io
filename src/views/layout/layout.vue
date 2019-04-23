@@ -5,7 +5,7 @@
         <Navbar></Navbar>
       </div>
       <div class="yd-main">
-        <div class="yd-content">
+        <div class="yd-content" :class="{edits:isEdit}">
           <router-view></router-view>
         </div>
         <div class="yd-content-footer"></div>
@@ -16,18 +16,24 @@
 <script>
 import { Navbar } from "@/views/layout/content";
 export default {
+  data(){
+    return {
+      isEdit:false
+    }
+  },
   components: {
     Navbar
   }
 };
 </script>
+
 <style lang="less" scoped>
 .yd-container {
   width: 100%;
   .yd-header {
     position: fixed;
     top: 0;
-    z-index: 10;
+    z-index: 1510;
     width: 100%;
     height: 60px;
     border: 1px solid #d3d3d3;
@@ -38,12 +44,6 @@ export default {
     top: 60px;
     width: 100%;
     min-height: calc(100% - 60px);
-    .yd-content {
-      width: 720px;
-      margin: 0 auto;
-      padding: 20px 5px 220px;
-      overflow: hidden;
-    }
     .yd-content-footer {
       position: absolute;
       bottom: 0;
@@ -52,5 +52,18 @@ export default {
       background: rgb(34, 34, 34);
     }
   }
+}
+</style>
+<style  lang="less">
+.yd-content {
+  width: 720px;
+  padding: 5px 5px 220px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+.edits {
+  width: 100%;
+  padding: 0px;
+  padding-bottom: 220px;
 }
 </style>

@@ -1,10 +1,13 @@
 <!-- 提示框 -->
 <template>
   <div>
-    <button @click="openTop()">top</button>
-    <button @click="openCenter()">center</button>
-    <button @click="openBottom()">bottom</button>
-    <button @click="openLoading()">loading</button>
+    <button @click="openI()">info</button>
+    <button @click="openW()">warn</button>
+    <button @click="openE()">error</button>
+    <button @click="openS()">success</button>
+    <button @click="openL()">loading</button>
+    <button @click="closeL()">closeL</button>
+    <button @click="openMsg()">message</button>
   </div>
 </template>
  
@@ -17,31 +20,38 @@ export default {
     };
   },
   methods: {
-    openTop() {
-      this.$toast.top("top");
+    openI() {
+      this.$toast.info({ content: "info" });
     },
-    openCenter() {
-      this.$toast.center("center");
+    openW() {
+      this.$toast.warn({ content: "warn" });
     },
-    openBottom() {
-      this.$toast("bottom"); // or this.$toast.bottom('bottom');
+    openE() {
+      this.$toast.error({ content: "error" }); // or this.$toast.bottom('bottom');
     },
-    openLoading() {
-      this.$loading("loading...");
-      let self = this;
-      setTimeout(function() {
-        self.closeLoading();
-      }, 2000);
+    openS() {
+      this.$toast.success({ content: "success" }); // or this.$toast.bottom('bottom');
     },
-    closeLoading() {
-      this.$loading.close();
+    openL() {
+      this.$loading.open("loading...");
+      setTimeout(() => this.$loading.close(), 3000);
+    },
+    openMsg() {
+      this.$msgBox
+        .showMsgBox({
+          title: "添加分类",
+          content: "请填写分类名称",
+          isShowInput: true
+        })
+        .then(async val => {})
+        .catch(() => {});
     }
   }
 };
 </script>
  
 <style lang="less" scoped>
-button{
+button {
   width: 80px;
   height: 40px;
   text-align: center;
