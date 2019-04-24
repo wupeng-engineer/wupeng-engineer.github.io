@@ -42,6 +42,12 @@ export default {
           title: "标签",
           bgColor: "red",
           fColor: "#fff"
+        },
+        {
+          id: "0002",
+          title: "标签2",
+          bgColor: "#d3d3d3",
+          fColor: "#000"
         }
       ],
       content:"一般一个产品在交付给用户使用之后，对于公司（开发者），无论是后续产品的改进，还是数据的价值来说，了解用户使用情况都是必不可少的。"

@@ -2,12 +2,14 @@
 <template>
   <div class="demo">
       <div class="title">实例</div>
-      <Panel></Panel>
-      <Panel></Panel>
-      <Panel></Panel>
-      <Panel></Panel>
-      <Panel></Panel>
-      <Panel></Panel>
+      <Panel :index="1"></Panel>
+    <Panel :index="2"></Panel>
+    <Panel :index="3"></Panel>
+    <Panel :index="4"></Panel>
+    <Panel :index="5"></Panel>
+    <Panel :index="6"></Panel>
+    <Panel :index="7"></Panel>
+    <Panel :index="8"></Panel>
   </div>
 </template>
  

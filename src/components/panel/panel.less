@@ -1,6 +1,23 @@
 .panel{
-    box-shadow: 0px 0px 2px #d3d3d3;
+    box-shadow: 1px 1px 3px #4b4b4b73;
     width: 100%;
-    height: 320px;
+    height: 400px;
     margin-bottom: 15px;
+    .panel-info,.panel-image{
+        float:left;
+        height: 400px;
+    }
+    &.float{
+        .panel-info,.panel-image{
+            float:right;
+        }
+    }
+}
+.panel-info{
+    width: 400px;
+    background: #ffffff;
+}
+.panel-image{
+    width: calc(100% - 400px);
+    background: #d3d3d3;
 }

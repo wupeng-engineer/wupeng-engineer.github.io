@@ -19,7 +19,7 @@ export default {
   }
 };
 </script>
-<style src="@/assets/theme/color.less" lang="less">
+<style src="@/assets/css/theme/color.less" lang="less">
 
 </style>
 

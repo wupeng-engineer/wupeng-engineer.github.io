@@ -2,14 +2,14 @@
 <template>
   <div>
     <div class="title">工具</div>
-    <Card></Card>
-    <Card></Card>
-    <Card></Card>
-    <Card></Card>
-    <Card></Card>
-    <Card></Card>
-    <Card></Card>
-    <Card></Card>
+    <Card :index="1"></Card>
+    <Card :index="2"></Card>
+    <Card :index="3"></Card>
+    <Card :index="4"></Card>
+    <Card :index="5"></Card>
+    <Card :index="6"></Card>
+    <Card :index="7"></Card>
+    <Card :index="8"></Card>
   </div>
 </template>
  

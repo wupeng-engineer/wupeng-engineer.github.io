@@ -30,7 +30,7 @@
 </template>
 <script>
 import { uLogin } from "@/views/interface/res.js";
-import "@/assets/login.less";
+import "@/assets/css/login.less";
 export default {
   name: "login",
   data() {
