@@ -1,15 +1,43 @@
-
 const Mock = require('mockjs');
-
+const Result = {
+    success: ({ msg, data, token }) => {
+        return {
+            code: 200,
+            message: "请求成功" || msg,
+            items: data,
+            systoken: token
+        }
+    },
+    error: ({ msg }) => {
+        return {
+            code: 400,
+            message: "请求失败" || msg
+        }
+    }
+}
 const Random = Mock.Random;
 
-const login = Mock.mock('/api/user/login', 'post', function () {
-    return {
-        code: 200,
-        message: "登录成功！"
+const login = Mock.mock('/api/user/login', 'post', function(data) {
+    if (!data) return Result.error({});
+    if (data.loginname && data.password) {
+        return Result.success({ systoken: 123 });
+    } else {
+        return Result.error({});
     }
+
 });
-const contents = Mock.mock('/api/home/content', 'get', function () {
+const navBar = Mock.mock('/api/home/navBar', 'get', function() {
+    let data = [{ title: "首页", id: "home", tabblank: "/home" },
+        { title: "时间轴", id: "archives", tabblank: "/archives" },
+        { title: "分类", id: "categories", tabblank: "/categories" },
+        { title: "标签", id: "tag", tabblank: "/tag" },
+        { title: "工具", id: "collections", tabblank: "/collections" },
+        { title: "实例", id: "demo", tabblank: "/demo" },
+        { title: "关于", id: "about", tabblank: "/about" }
+    ]
+    return Result.success({ systoken: 123, data: data });
+});
+const contents = Mock.mock('/api/home/content', 'get', function() {
     return {
         code: 200,
         message: "获取文章列表",
@@ -66,4 +94,4 @@ const contents = Mock.mock('/api/home/content', 'get', function () {
         }]
     }
 });
-module.exports = { login, contents };
+module.exports = { login, contents, navBar };
