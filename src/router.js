@@ -18,7 +18,7 @@ export default new Router({
                 component: () =>
                     import ('@/components/markdown/edit'),
             }, {
-                path: '/',
+                path: '/toast',
                 name: 'toast',
                 component: () =>
                     import ('@/views/layout/test/toast'),

@@ -1,7 +1,7 @@
 <!-- 提示框 -->
 <template>
   <div>
-    <div>分类</div>
+    <div class="title">分类</div>
       <Card></Card>
       <Card></Card>
       <Card></Card>

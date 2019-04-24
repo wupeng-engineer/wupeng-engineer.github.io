@@ -1,27 +1,25 @@
 <!-- 提示框 -->
 <template>
-  <div>
-      <div>实例</div>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
+  <div class="demo">
+      <div class="title">实例</div>
+      <Panel></Panel>
+      <Panel></Panel>
+      <Panel></Panel>
+      <Panel></Panel>
+      <Panel></Panel>
+      <Panel></Panel>
   </div>
 </template>
  
 <script>
-import Card from '@/components/card/card'
+import Panel from '@/components/panel/panel'
 export default {
-  name: "cards",
+  name: "demo",
   data() {
     return {};
   },
   components:{
-      Card
+      Panel
   }
 };
 </script>

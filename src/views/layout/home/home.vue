@@ -1,7 +1,7 @@
 <!-- 提示框 -->
 <template>
-  <div>
-      <div>主页</div>
+  <div class="home">
+      <div class="title">主页</div>
       <Card></Card>
       <Card></Card>
       <Card></Card>
@@ -16,7 +16,7 @@
 <script>
 import Card from '@/components/card/card'
 export default {
-  name: "cards",
+  name: "home",
   data() {
     return {};
   },

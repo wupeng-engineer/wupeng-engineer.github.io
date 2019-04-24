@@ -16,10 +16,10 @@
 <script>
 import { Navbar } from "@/views/layout/content";
 export default {
-  data(){
+  data() {
     return {
-      isEdit:false
-    }
+      isEdit: false
+    };
   },
   components: {
     Navbar
@@ -56,11 +56,11 @@ export default {
 </style>
 <style  lang="less">
 .yd-content {
-  width: 720px;
+  width: 1100px;
   padding: 5px 5px 220px;
-      margin: 0 auto;
-      overflow: hidden;
-    }
+  margin: 0 auto;
+  overflow: hidden;
+}
 .edits {
   width: 100%;
   padding: 0px;

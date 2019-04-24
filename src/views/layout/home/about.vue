@@ -1,7 +1,7 @@
 <!-- 提示框 -->
 <template>
   <div>
-      <div>关于</div>
+      <div class="title">关于</div>
       <Card></Card>
       <Card></Card>
       <Card></Card>

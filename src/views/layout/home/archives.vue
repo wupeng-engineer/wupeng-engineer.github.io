@@ -1,7 +1,7 @@
 <!-- 提示框 -->
 <template>
   <div>
-      <div>时间轴</div>
+      <div class="title">时间轴</div>
       <Card></Card>
       <Card></Card>
       <Card></Card>

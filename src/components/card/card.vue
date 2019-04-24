@@ -35,6 +35,7 @@ export default {
     return {
       src: "static/images/no-pic.png",
       title: "vue代码",
+      date:"2019年4月21日",
       tags: [
         {
           id: "0001",

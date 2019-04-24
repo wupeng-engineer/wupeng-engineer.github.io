@@ -1,27 +1,27 @@
 <!-- 提示框 -->
 <template>
   <div>
-      <div>工具</div>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
+    <div class="title">工具</div>
+    <Card></Card>
+    <Card></Card>
+    <Card></Card>
+    <Card></Card>
+    <Card></Card>
+    <Card></Card>
+    <Card></Card>
+    <Card></Card>
   </div>
 </template>
  
 <script>
-import Card from '@/components/card/card'
+import Card from "@/components/card/card";
 export default {
   name: "cards",
   data() {
     return {};
   },
-  components:{
-      Card
+  components: {
+    Card
   }
 };
 </script>
