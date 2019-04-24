@@ -1,14 +1,25 @@
 <template>
-  <div id="app">
-    <router-view />
+  <div id="app" class="theme-default">
+    <Login v-if="this.$store.getters.getLogin"></Login>
+    <router-view/>
   </div>
 </template>
 <script>
+import Login from "@/views/login/login.vue";
+export default {
+  data() {
+    return {
+      login: ""
+    };
+  },
+  methods: {
+  },
+  components: {
+    Login
+  }
+};
 </script>
-<style lang="less">
-#app {
-  background-color: @background-color;
-  width: 100%;
-  height: 100%;
-}
+<style src="@/assets/theme/color.less" lang="less">
+
 </style>
+
