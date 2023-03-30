@@ -2,7 +2,7 @@ const path = require('path')
 const UglifyPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
-    publicPath: './yidie.github.io/',
+    publicPath: '/yidie.github.io/',
     assetsDir: 'static',
     lintOnSave: false,
     chainWebpack: (config) => {},
